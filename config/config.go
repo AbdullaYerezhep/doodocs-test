@@ -35,15 +35,12 @@ type Gmail struct {
 
 func MustLoad() *Config {
 	if isRunningTests() {
-		err := godotenv.Load("../../local.env")
+		err := godotenv.Load("etc/secrets/configs")
 		if err != nil {
 			log.Fatalf("Config for test not loaded: %s does not exist", err)
 		}
-		configPath := os.Getenv("CONFIG_PATH_TEST")
 
-		if configPath == "" {
-			configPath = "../../config/config.yaml"
-		}
+		configPath := "etc/secrets/configs"
 		if _, err := os.Stat(configPath); os.IsNotExist(err) {
 			log.Fatalf("Config file %s does not exist", configPath)
 		}
@@ -65,11 +62,8 @@ func MustLoad() *Config {
 	// 	log.Fatalf("Config not loaded: %s does not exist", err)
 	// }
 
-	configPath := os.Getenv("CONFIG_PATH")
 
-	if configPath == "" {
-		configPath = "./config/config.yaml"
-	}
+	configPath := "etc/secrets/configs"
 
 	if _, err := os.Stat(configPath); os.IsNotExist(err) {
 		log.Fatalf("Config file %s does not exist", configPath)
