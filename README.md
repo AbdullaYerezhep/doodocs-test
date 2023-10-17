@@ -14,7 +14,7 @@
 Чтобы начать использовать API, клонируйте репозиторий на свой компьютер:
 
 
-`git clone https://github.com/yourusername/your-repo.git`
+`git clone https://github.com/yourusername/doodocs-test.git`
 
 # Сборка API
 
