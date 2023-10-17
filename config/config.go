@@ -40,7 +40,7 @@ func MustLoad() *Config {
 			log.Fatalf("Config for test not loaded: %s does not exist", err)
 		}
 
-		configPath := "etc/secrets/configs"
+		configPath := "/etc/secrets/configs"
 		if _, err := os.Stat(configPath); os.IsNotExist(err) {
 			log.Fatalf("Config file %s does not exist", configPath)
 		}
