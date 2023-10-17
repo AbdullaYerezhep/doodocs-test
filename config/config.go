@@ -60,10 +60,10 @@ func MustLoad() *Config {
 		return &cfg
 	}
 
-	err := godotenv.Load("./local.env")
-	if err != nil {
-		log.Fatalf("Config not loaded: %s does not exist", err)
-	}
+	// err := godotenv.Load("./local.env")
+	// if err != nil {
+	// 	log.Fatalf("Config not loaded: %s does not exist", err)
+	// }
 
 	configPath := os.Getenv("CONFIG_PATH")
 
